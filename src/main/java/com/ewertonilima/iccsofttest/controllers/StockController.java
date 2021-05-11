@@ -9,18 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ewertonilima.iccsofttest.entities.Stock;
-import com.ewertonilima.iccsofttest.repositories.StockRepository;
+import com.ewertonilima.iccsofttest.services.StockService;
 
 @RestController
 @RequestMapping(value = "/stocks")
 public class StockController {
 	
 	@Autowired
-	StockRepository stockRepository;
+	StockService stockService;
 	
 	@GetMapping
-	public ResponseEntity<List<Stock>> getAll(){
-		return ResponseEntity.ok(stockRepository.findAll());
+	public ResponseEntity<List<Stock>> findAll(){
+		List<Stock> list = stockService.findAll();
+		return ResponseEntity.ok(list);
 	}
 
 }
