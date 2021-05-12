@@ -18,5 +18,10 @@ public class StockService {
 		List<Stock> result = stockRepository.findAll();
 		return result;
 	}
+	
+	public Stock findByName(String name) {
+		Stock result = stockRepository.findByNameContainingIgnoreCase(name);
+		return result;
+	}
 
 }
