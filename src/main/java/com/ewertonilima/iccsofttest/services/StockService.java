@@ -19,8 +19,8 @@ public class StockService {
 		return result;
 	}
 	
-	public Stock findByName(String name) {
-		Stock result = stockRepository.findByNameContainingIgnoreCase(name);
+	public Stock findById(String id) {
+		Stock result = stockRepository.findByIdContainingIgnoreCase(id);
 		return result;
 	}
 

@@ -25,9 +25,9 @@ public class StockController {
 		return ResponseEntity.ok(list);
 	}
 
-	@GetMapping("/{name}")
-	public ResponseEntity<Stock> findByName(@PathVariable String name) {
-		Stock stock = stockService.findByName(name);
+	@GetMapping("/{id}")
+	public ResponseEntity<Stock> findByName(@PathVariable String id) {
+		Stock stock = stockService.findById(id);
 		return ResponseEntity.ok(stock);
 	}
 

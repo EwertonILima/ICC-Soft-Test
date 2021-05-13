@@ -8,6 +8,6 @@ import com.ewertonilima.iccsofttest.entities.Stock;
 public interface StockRepository extends JpaRepository<Stock, Long>{
 	
 	@Transactional(readOnly=true)
-	Stock findByNameContainingIgnoreCase(String name);
+	Stock findByIdContainingIgnoreCase(String id);
 
 }
